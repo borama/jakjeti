@@ -19,33 +19,78 @@ a:hover, .link:hover {
 
 /* mark external links with a curved arrow - see http://underscorebleach.net/jotsheet/2004/12/offsite-external-links-css-attribute-selectors */
 a[href^="http"]:after {
-  content: "\2009\219D";
+  content: "\0021F1";
   font-size: xx-small;
+  display: inline-block;
+  vertical-align: top;
+  margin: .125rem 0 0 .125rem;
+  rotate: 90deg;
 }
 a[href^="https://jakjeti.cz"]:after,
 a[href^="https://www.jakjeti.cz"]:after,
 a[href^="http://127.0.0.1"]:after {
-  content: "";
+  display: none;
+}
+
+ul, ol {
+  margin: 1rem 0;
 }
 
 ul {
   list-style: disc;
-  margin: 1rem 0;
 }
 
-ul > li {
+ol {
+  list-style: decimal;
+}
+
+li {
   margin-left: 1rem;
 }
 
-p {
+p:not(:only-of-type) {
   margin-bottom: 1rem;
 }
 
 h1, h2, h3, h4 {
   color: #4a3506;
   font-weight: bold;
+  margin: 1rem 0 0.5rem 0;
 }
 
 details summary.link, details summary.link:hover {
   border-bottom: none;
+}
+
+:target {
+  background-color: #b4b1a350;
+}
+
+/* markdown styles */
+h2 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+blockquote {
+  margin: 0 0 1rem 2rem;
+  padding-left: 1rem;
+  border-left: 3px solid #b4b1a350;
+}
+
+.footnote-definition {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.footnote-definition sup {
+  top: 0;
+  position: initial;
+  line-height: initial;
+}
+
+hr {
+  border-color: #4a3506;
+  margin: 2rem 66% 0.5rem 0;
 }
